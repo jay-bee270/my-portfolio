@@ -80,6 +80,9 @@
 }
 
 .hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
   transform: translateX(30px);
   transition: all 1s ease 0.3s;
@@ -93,37 +96,25 @@
 .image-container {
   position: relative;
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.image-container::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 100%;
-  height: 100%;
-  border: 3px solid var(--primary-color);
-  border-radius: var(--border-radius);
-  z-index: -1;
-  transition: all var(--transition-medium);
-}
-
-.image-container:hover::before {
-  top: -10px;
-  right: -10px;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .image-container img {
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all var(--transition-medium);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .image-container:hover img {
-  transform: scale(1.02);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
 .scroll-indicator {
