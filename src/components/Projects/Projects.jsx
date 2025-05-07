@@ -23,10 +23,10 @@ const projectsData = [
     title: "Portfolio Website",
     category: "Web Design",
     image: "/placeholder.svg?height=300&width=500",
-    description: "A creative portfolio website for a front-end developer freelancer showcasing their work.",
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
+    description: "🌐This is about me, A Front-end developer | Building responsive webs-apps, websites and apps | Always learning & creating also always keen on solving real-life problems every day.",
+    technologies: ["React", "CSS", "JavaScript", "Framer motion"],
     liveLink: "https://example.com",
-    codeLink: "https://github.com/yourusername/project",
+    codeLink: "https://github.com/jay-bee270/my-portfolio",
   },
   {
     id: 3,
