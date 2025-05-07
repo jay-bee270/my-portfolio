@@ -31,7 +31,9 @@ const skillsData = [
       { name: "UI/UX Design", level: 75 },
       { name: "Framer Motion", level: 80 },
       { name: "Animations", level: 80 },
-      { name: "Testing", level: 70 },
+      { name: "Testing", level: 70 },      
+      { name: "Ai's", level: 95 },      
+
     ],
   },
 ]

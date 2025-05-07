@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import "./Projects.css"
 import loanImage from "../../assets/loan.png";
 import weatherImage from "../../assets/weather.png";
+import portfolioImage from "../../assets/portfolio.png";
 
 
 // Project data
@@ -22,16 +23,16 @@ const projectsData = [
     id: 2,
     title: "Portfolio Website",
     category: "Web Design",
-    image: "/placeholder.svg?height=300&width=500",
+    image: portfolioImage,
     description: "🌐This is about me, A Front-end developer | Building responsive webs-apps, websites and apps | Always learning & creating also always keen on solving real-life problems every day.",
     technologies: ["React", "CSS", "JavaScript", "Framer motion"],
-    liveLink: "https://example.com",
+    liveLink: "https://my-portfolio-nine-ruddy-22.vercel.app/",
     codeLink: "https://github.com/jay-bee270/my-portfolio",
   },
   {
     id: 3,
     title: "Weather App",
-    category: "Web Development",
+    category: "Mobile App",
     image: weatherImage,
     description: "An app to check weather conditions anywhere in the world.",
     technologies: ["HTML", "CSS"],
