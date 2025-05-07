@@ -1,0 +1,160 @@
+.projects {
+  background-color: var(--background-color);
+}
+
+.project-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background-color: rgba(74, 108, 247, 0.05);
+}
+
+.filter-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px; /* Added margin to separate from filters */
+}
+
+.project-card {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  opacity: 1; /* Changed from 0 to 1 to ensure visibility */
+  transform: translateY(0); /* Removed initial transform */
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-fast);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.project-card:hover .project-links {
+  opacity: 1;
+}
+
+.project-link {
+  padding: 8px 15px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color var(--transition-fast);
+}
+
+.project-link:hover {
+  background-color: var(--primary-dark);
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.project-description {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  padding: 4px 10px;
+  background-color: var(--background-alt);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-btn {
+    padding: 6px 15px;
+    font-size: 0.8rem;
+  }
+}

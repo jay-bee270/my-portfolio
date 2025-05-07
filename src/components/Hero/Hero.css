@@ -1,0 +1,251 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(74, 108, 247, 0.05) 0%, rgba(74, 108, 247, 0) 100%);
+  z-index: 0;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.hero-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(74, 108, 247, 0.2);
+  z-index: -1;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-image {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 1s ease 0.3s;
+}
+
+.hero-image.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  z-index: -1;
+  transition: all var(--transition-medium);
+}
+
+.image-container:hover::before {
+  top: -10px;
+  right: -10px;
+}
+
+.image-container img {
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-medium);
+}
+
+.image-container:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+.mouse {
+  width: 26px;
+  height: 40px;
+  border: 2px solid var(--text-color);
+  border-radius: 20px;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background-color: var(--text-color);
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  animation: scroll 1.5s infinite;
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
+  transform: rotate(45deg);
+  margin-top: 10px;
+  animation: arrow 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(15px);
+  }
+}
+
+@keyframes arrow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content {
+    order: 2;
+  }
+
+  .hero-image {
+    order: 1;
+    margin-bottom: 30px;
+  }
+
+  .hero-description {
+    margin: 0 auto 30px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
