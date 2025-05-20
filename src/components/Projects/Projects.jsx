@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from "react"
 import "./Projects.css"
-import loanImage from "../../assets/loan.png";
-import weatherImage from "../../assets/weather.png";
-import portfolioImage from "../../assets/portfolio.png";
-
+import loanImage from "../../assets/loan.png"
+import weatherImage from "../../assets/weather.png"
+import portfolioImage from "../../assets/portfolio.png"
+import furnitureImage from "../../assets/furniture.png"
 
 // Project data
 const projectsData = [
   {
-     id: 1,
+    id: 1,
     title: "Loan Website",
     category: "Web Development",
     image: loanImage,
@@ -18,13 +18,14 @@ const projectsData = [
     technologies: ["React", "JavaScript", "Framer motion"],
     liveLink: "https://loan-ease.vercel.app/",
     codeLink: "https://github.com/jay-bee270/LoanEase",
+    featured: true,
   },
   {
     id: 2,
     title: "Portfolio Website",
     category: "Web Design",
     image: portfolioImage,
-    description: "🌐This is about me, A Front-end developer | Building responsive webs-apps, websites and apps | Always learning & creating also always keen on solving real-life problems every day.",
+    description: "A personal portfolio showcasing my skills, projects, and experience as a Front-end developer.",
     technologies: ["React", "CSS", "JavaScript", "Framer motion"],
     liveLink: "https://my-portfolio-nine-ruddy-22.vercel.app/",
     codeLink: "https://github.com/jay-bee270/my-portfolio",
@@ -40,14 +41,15 @@ const projectsData = [
     codeLink: "https://github.com/jay-bee270/Weather-WebApp",
   },
   {
-   id: 4,
-    title: "E-Commerce Website",
+    id: 4,
+    title: "Furniture Website",
     category: "Web Development",
-    image: "/placeholder.svg?height=300&width=500",
+    image: furnitureImage,
     description: "A fully responsive e-commerce platform built with React and Node.js.",
     technologies: ["React", "Node.js", "Express", "MongoDB"],
-    liveLink: "https://example.com",
+    liveLink: "https://example.com/stillonconstruction",
     codeLink: "https://github.com/yourusername/project",
+    inProgress: true,
   },
 ]
 
@@ -58,6 +60,7 @@ function Projects() {
   const [activeCategory, setActiveCategory] = useState("All")
   const [visibleProjects, setVisibleProjects] = useState([])
   const [isVisible, setIsVisible] = useState(false)
+  const [animateCards, setAnimateCards] = useState(false)
 
   // Filter projects based on active category
   useEffect(() => {
@@ -66,6 +69,12 @@ function Projects() {
     } else {
       setVisibleProjects(projectsData.filter((project) => project.category === activeCategory))
     }
+
+    // Reset animation state when changing categories
+    setAnimateCards(false)
+    setTimeout(() => {
+      setAnimateCards(true)
+    }, 50)
   }, [activeCategory])
 
   useEffect(() => {
@@ -76,6 +85,9 @@ function Projects() {
         const windowHeight = window.innerHeight
         if (sectionTop < windowHeight * 0.75) {
           setIsVisible(true)
+          setTimeout(() => {
+            setAnimateCards(true)
+          }, 300)
         }
       }
     }
@@ -107,8 +119,12 @@ function Projects() {
         </div>
 
         <div className="projects-grid">
-          {visibleProjects.map((project) => (
-            <div key={project.id} className={`project-card ${isVisible ? "visible" : ""}`}>
+          {visibleProjects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`project-card ${isVisible && animateCards ? "visible" : ""}`}
+              style={{ animationDelay: `${index * 0.15}s` }}
+            >
               <div className="project-image">
                 <img src={project.image || "/placeholder.svg"} alt={project.title} loading="lazy" />
                 <div className="project-links">
@@ -119,10 +135,14 @@ function Projects() {
                     View Code
                   </a>
                 </div>
+                {project.featured && <div className="project-badge featured">Featured</div>}
+                {project.inProgress && <div className="project-badge in-progress">In Progress</div>}
               </div>
               <div className="project-info">
                 <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
+                <div className="project-description-wrapper">
+                  <p className="project-description">{project.description}</p>
+                </div>
                 <div className="project-tech">
                   {project.technologies.map((tech) => (
                     <span key={tech} className="tech-tag">

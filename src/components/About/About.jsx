@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import "./About.css"
 import about from "../../assets/about.jpg"
+import resume from "../../assets/resume.pdf"
 
 function About() {
   const [isVisible, setIsVisible] = useState(false)
@@ -65,7 +66,7 @@ function About() {
               </div>
             </div>
 
-            <a href="/resume.pdf" className="btn" download>
+            <a href={resume} className="btn" download>
               Download Resume
             </a>
           </div>

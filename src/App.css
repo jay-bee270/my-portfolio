@@ -18,6 +18,15 @@
   --transition-medium: 0.5s ease;
 }
 
+:root {
+  --primary-color: #4a6cf7;
+  --background-color: #ffffff;
+  --background-alt: #f8f9fa;
+  --border-color: #e5e7eb;
+  --text-light: #666666;
+  --border-radius: 8px;
+}
+
 /* Reset and Base Styles */
 * {
   margin: 0;

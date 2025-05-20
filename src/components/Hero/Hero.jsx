@@ -16,7 +16,7 @@ function Hero() {
       <div className="container hero-container">
         <div className={`hero-content ${isVisible ? "visible" : ""}`}>
           <h1 className="hero-title">
-            Hi, I'm <span className="highlight">Afolawiyo Jubril .O</span>
+            Hi, I'm <span className="highlight">Afolawiyo Jubril .O <br /> A.K.A (AFO)</span>
           </h1>
           <h2 className="hero-subtitle">Front-End Developer & Designer</h2>
           <p className="hero-description">

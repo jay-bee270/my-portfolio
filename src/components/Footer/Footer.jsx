@@ -7,9 +7,9 @@ function Footer() {
   // Replace these with your actual social media links
   const socialLinks = [
     { icon: <FaGithub />, link: "https://github.com/jay-bee270", label: "GitHub" },
-    { icon: <FaLinkedin />, link: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-    { icon: <FaTwitter />, link: "https://twitter.com/yourusername", label: "Twitter" },
-    { icon: <FaInstagram />, link: "https://www.instagram.com/", label: "Instagram" },
+    { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/jubril-afolawiyo-655aa133b/?trk=PROFILE_DROP_DOWN" , label: "LinkedIn" },
+    { icon: <FaTwitter />, link: "https://x.com/alab_iii", label: "Twitter" },
+    { icon: <FaInstagram />, link: "https://www.instagram.com/jbo_officials", label: "Instagram" },
   ]
 
   return (

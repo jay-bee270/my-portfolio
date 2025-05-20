@@ -11,7 +11,7 @@ const skillsData = [
       { name: "CSS", level: 85 },
       { name: "JavaScript", level: 70 },
       { name: "React", level: 85 },
-      { name: "React-Native", level: 70 },
+        { name: "React-Native", level: 70 },
      
     ],
   },
@@ -85,3 +85,15 @@ function Skills() {
 }
 
 export default Skills
+
+
+
+
+
+
+
+
+
+
+
+
