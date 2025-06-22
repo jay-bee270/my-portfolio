@@ -95,7 +95,7 @@
 
 .image-container {
   position: relative;
-  width: 100%;
+  width: 60%;
   max-width: 400px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
