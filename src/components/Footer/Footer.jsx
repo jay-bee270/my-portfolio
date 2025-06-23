@@ -1,4 +1,5 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6";
 import "./Footer.css"
 
 function Footer() {
@@ -8,7 +9,7 @@ function Footer() {
   const socialLinks = [
     { icon: <FaGithub />, link: "https://github.com/jay-bee270", label: "GitHub" },
     { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/jubril-afolawiyo-655aa133b/?trk=PROFILE_DROP_DOWN" , label: "LinkedIn" },
-    { icon: <FaTwitter />, link: "https://x.com/alab_iii", label: "Twitter" },
+    { icon: <FaXTwitter style={{ color: "black" }}/>, link: "https://x.com/alab_iii", label: "X" },
     { icon: <FaInstagram />, link: "https://www.instagram.com/jbo_officials", label: "Instagram" },
   ]
 

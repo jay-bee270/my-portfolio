@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa"
+import { FaXTwitter } from "react-icons/fa6";
 import emailjs from "@emailjs/browser"
 import ReCAPTCHA from "react-google-recaptcha"
 import "./Contact.css"
@@ -338,7 +339,7 @@ ${sanitizedMessage}
                 className="social-link"
                 aria-label="Twitter"
               >
-                <FaTwitter />
+                <FaXTwitter style={{ color: "black" }}/>
               </a>
               <a
                 href="https://www.instagram.com/jbo_officials"

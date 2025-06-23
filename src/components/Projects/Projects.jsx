@@ -6,6 +6,7 @@ import loanImage from "../../assets/loan.png"
 import weatherImage from "../../assets/weather.png"
 import portfolioImage from "../../assets/portfolio.png"
 import furnitureImage from "../../assets/furniture.png"
+import BookService from "../../assets/BookService.png"
 
 // Project data
 const projectsData = [
@@ -49,6 +50,17 @@ const projectsData = [
     technologies: ["React", "Node.js", "Express", "MongoDB"],
     liveLink: "https://example.com/stillonconstruction",
     codeLink: "https://github.com/yourusername/project",
+    inProgress: true,
+  },
+  {
+    id: 5,
+    title: "BookService Website",
+    category: "Web Development",
+    image: BookService,
+    description: "A fully responsive website platform built with React and javascript used for managing books",
+    technologies: ["React", "Javascript", "Ant design", "Potgress", "Spring", "SpringBoot", "MongoDB"],
+    liveLink: "https://book-service-wheat.vercel.app/",
+    codeLink: "https://github.com/jay-bee270/BookService",
     inProgress: true,
   },
 ]
