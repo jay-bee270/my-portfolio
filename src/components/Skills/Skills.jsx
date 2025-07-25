@@ -21,6 +21,7 @@ const skillsData = [
       { name: "MongoDB", level: 70 },
       { name: "SQL", level: 65 },
       { name: "RESTful APIs", level: 75 },
+      { name: "Firebase", level: 70 }
     ],
   },
   {
