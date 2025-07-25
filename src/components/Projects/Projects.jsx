@@ -5,7 +5,7 @@ import "./Projects.css"
 import loanImage from "../../assets/loan.png"
 import weatherImage from "../../assets/weather.png"
 import portfolioImage from "../../assets/portfolio.png"
-import furnitureImage from "../../assets/furniture.png"
+import furnitureImage from "../../assets/furniture1.png"
 import BookService from "../../assets/BookService.png"
 
 // Project data
@@ -46,11 +46,10 @@ const projectsData = [
     title: "Furniture Website",
     category: "Web Development",
     image: furnitureImage,
-    description: "A fully responsive e-commerce platform built with React and Node.js.",
-    technologies: ["React", "Node.js", "Express", "MongoDB"],
-    liveLink: "https://example.com/stillonconstruction",
-    codeLink: "https://github.com/yourusername/project",
-    inProgress: true,
+    description: "An E-commerce landing page website for a furniture app built with React and used Firebase for the backend",
+    technologies: ["React", "Javascript", "Firebase"],
+    liveLink: "https://afofurnitures.vercel.app/",
+    codeLink: "https://github.com/jay-bee270/A.F.O.-Furnitures",
   },
   {
     id: 5,
