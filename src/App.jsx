@@ -5,9 +5,13 @@ import Header from "./components/Header/Header"
 import Hero from "./components/Hero/Hero"
 import About from "./components/About/About"
 import Projects from "./components/Projects/Projects"
+import Stats from "./components/Stats/Stats"
+import Experience from "./components/Experience/Experience"
 import Skills from "./components/Skills/Skills"
+import Testimonials from "./components/Testimonials/Testimonials"
 import Contact from "./components/Contact/Contact"
 import Footer from "./components/Footer/Footer"
+// import DarkModeToggle from "./components/DarkModeToggle/DarkModeToggle"
 import "./App.css"
 
 function App() {
@@ -28,11 +32,15 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Stats />
         <Projects />
+        <Experience />
         <Skills />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />
+      {/* <DarkModeToggle /> */}
     </div>
   )
 }

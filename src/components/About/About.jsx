@@ -1,9 +1,10 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { Award, Briefcase, GraduationCap, MapPin } from "lucide-react"
 import "./About.css"
-import about from "../../assets/about.jpg"
-import resume from "../../assets/resume.pdf"
+import about from "../../assets/down.webp"
+import resume from "../../assets/resume.pdf" // Declared the resume variable
 
 function About() {
   const [isVisible, setIsVisible] = useState(false)
@@ -29,46 +30,70 @@ function About() {
     <section id="about" className="section about">
       <div className="container">
         <h2 className="section-title">About Me</h2>
-        <p className="section-subtitle">Here's a little bit about my background and what I do.</p>
+        <p className="section-subtitle">A glimpse into my professional journey and who I am.</p>
 
         <div className={`about-content ${isVisible ? "visible" : ""}`}>
-          <div className="about-image">
-            <img src={about} alt="About Me" />
+          <div className="about-image-container">
+            <div className="about-image">
+              <img src={about || "/placeholder.svg"} alt="Afolawiyo Jubril" />
+              <div className="experience-badge">
+                <span className="years">3+</span>
+                <span className="label">Years of Experience</span>
+              </div>
+            </div>
+            <div className="about-stats-mini">
+              <div className="stat-pill">
+                <Award size={16} />
+                <span>10+ Projects Done</span>
+              </div>
+              <div className="stat-pill">
+                <Briefcase size={16} />
+                <span>Available for Freelance</span>
+              </div>
+            </div>
           </div>
+
           <div className="about-text">
-            <h3>Who I Am</h3>
+            <h3>Crafting Digital Excellence</h3>
             <p>
-              I'm a passionate web developer with a strong focus on creating beautiful, functional, and user-friendly
-              websites. With expertise in modern web technologies, I strive to build applications that not only look
-              great but also provide an exceptional user experience.
+              I'm a dedicated full-stack developer based in Lagos, Nigeria, driven by the challenge of turning complex
+              problems into elegant, user-centric solutions. With a focus on modern performance and accessible design, I
+              build applications that stand out in today's digital landscape.
             </p>
             <p>
-              My journey in web development started several years ago, and since then, I've been constantly learning and
-              improving my skills to stay up-to-date with the latest trends and technologies in the industry.
+              My expertise lies in building scalable web and mobile applications using the latest ecosystem of tools, ensuring
+              every line of code contributes to a seamless and engaging user experience.
             </p>
 
-            <div className="about-info">
-              <div className="info-item">
-                <h4>Name:</h4>
-                <p>Afolawiyo Jubril .O</p>
+            <div className="about-info-grid">
+              <div className="info-card">
+                <div className="info-icon">
+                  <GraduationCap size={20} />
+                </div>
+                <div className="info-details">
+                  <h4>Education</h4>
+                  <p>Software Engineering</p>
+                </div>
               </div>
-              <div className="info-item">
-                <h4>Email:</h4>
-                <p>jubrilo2007@gmail.com</p>
-              </div>
-              <div className="info-item">
-                <h4>Location:</h4>
-                <p>Lagos, Nigeria</p>
-              </div>
-              <div className="info-item">
-                <h4>Availability:</h4>
-                <p>Available for Freelance</p>
+              <div className="info-card">
+                <div className="info-icon">
+                  <MapPin size={20} />
+                </div>
+                <div className="info-details">
+                  <h4>Location</h4>
+                  <p>Lagos, Nigeria</p>
+                </div>
               </div>
             </div>
 
-            <a href={resume} className="btn" download>
-              Download Resume
-            </a>
+            <div className="about-actions">
+              <a href={resume} className="btn btn-primary" download>
+                Download Resume
+              </a>
+              <a href="#contact" className="btn btn-outline">
+                Let's Talk
+              </a>
+            </div>
           </div>
         </div>
       </div>

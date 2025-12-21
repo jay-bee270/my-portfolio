@@ -19,7 +19,7 @@ function Header({ isScrolled }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "projects", "skills", "contact"]
+      const sections = ["home", "about", "projects", "experience", "skills", "testimonials", "contact"]
 
       for (const section of sections) {
         const element = document.getElementById(section)
@@ -73,11 +73,29 @@ function Header({ isScrolled }) {
             </li>
             <li className="nav-item">
               <a
+                href="#experience"
+                className={`nav-link ${activeSection === "experience" ? "active" : ""}`}
+                onClick={closeMenu}
+              >
+                Experience
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
                 href="#skills"
                 className={`nav-link ${activeSection === "skills" ? "active" : ""}`}
                 onClick={closeMenu}
               >
                 Skills
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                href="#testimonials"
+                className={`nav-link ${activeSection === "testimonials" ? "active" : ""}`}
+                onClick={closeMenu}
+              >
+                Ratings & Reviews
               </a>
             </li>
             <li className="nav-item">

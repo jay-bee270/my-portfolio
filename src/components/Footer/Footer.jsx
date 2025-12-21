@@ -35,6 +35,9 @@ function Footer() {
                 <a href="#projects">Projects</a>
               </li>
               <li>
+                <a href="#experience">Experience</a>
+              </li>
+              <li>
                 <a href="#skills">Skills</a>
               </li>
               <li>

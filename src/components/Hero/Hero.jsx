@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import "./Hero.css"
-import fine from "../../assets/fine.jpg"
+import fine from "../../assets/me.jpg"
 
 function Hero() {
   const [isVisible, setIsVisible] = useState(false)
