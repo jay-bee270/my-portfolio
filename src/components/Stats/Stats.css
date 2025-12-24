@@ -1,8 +1,5 @@
 .stats {
   padding: 80px 20px;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(30, 41, 59, 0.5) 100%);
-  border-top: 1px solid rgba(96, 165, 250, 0.1);
-  border-bottom: 1px solid rgba(96, 165, 250, 0.1);
 }
 
 .stats.visible {
@@ -17,12 +14,11 @@
 }
 
 .stat-card {
-  background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(147, 197, 253, 0.05) 100%);
-  border: 1px solid rgba(96, 165, 250, 0.2);
+  background: #0a0a0a;
+  border: 1px solid #333333;
   border-radius: 16px;
   padding: 32px 24px;
   text-align: center;
-  backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   animation: fadeInUp 0.6s ease-out forwards;
   opacity: 0;
@@ -30,28 +26,27 @@
 
 .stat-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(96, 165, 250, 0.4);
-  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.2);
+  border-color: #555555;
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
+  background: #111111;
 }
 
 .stat-icon {
   font-size: 40px;
   margin-bottom: 16px;
+  color: #ffffff;
 }
 
 .stat-number {
   font-size: 36px;
   font-weight: 700;
-  color: #60a5fa;
+  color: #ffffff;
   margin: 12px 0;
-  background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .stat-label {
   font-size: 16px;
-  color: #cbd5e1;
+  color: #cccccc;
   font-weight: 500;
 }
 

@@ -80,17 +80,51 @@ function Stats() {
   }, [isVisible])
 
   return (
-    <section id="stats" className={`section stats ${isVisible ? "visible" : ""}`}>
+    <section 
+      id="stats" 
+      className={`section stats ${isVisible ? "visible" : ""}`}
+      style={{
+        backgroundColor: "#000000",
+        borderTop: "1px solid #333333",
+        borderBottom: "1px solid #333333",
+      }}
+    >
       <div className="container">
         <div className="stats-grid">
           {statsData.map((stat, index) => (
-            <div key={stat.id} className="stat-card" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="stat-icon">{stat.icon}</div>
-              <div className="stat-number">
+            <div 
+              key={stat.id} 
+              className="stat-card" 
+              style={{ 
+                animationDelay: `${index * 0.1}s`,
+                backgroundColor: "#0a0a0a",
+                border: "1px solid #333333",
+              }}
+            >
+              <div 
+                className="stat-icon"
+                style={{ color: "#ffffff" }}
+              >
+                {stat.icon}
+              </div>
+              <div 
+                className="stat-number"
+                style={{ 
+                  color: "#ffffff",
+                  background: "none",
+                  WebkitBackgroundClip: "initial",
+                  WebkitTextFillColor: "initial",
+                }}
+              >
                 {counts[index]}
                 {stat.number.replace(/[0-9]/g, "")}
               </div>
-              <div className="stat-label">{stat.label}</div>
+              <div 
+                className="stat-label"
+                style={{ color: "#cccccc" }}
+              >
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>

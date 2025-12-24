@@ -41,6 +41,9 @@ function Footer() {
                 <a href="#skills">Skills</a>
               </li>
               <li>
+                <a href="#testimonials">Ratings & Reviews</a>
+              </li>
+              <li>
                 <a href="#contact">Contact</a>
               </li>
             </ul>

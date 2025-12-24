@@ -19,7 +19,7 @@ function Header({ isScrolled }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "projects", "experience", "skills", "testimonials", "contact"]
+      const sections = ["home", "about", "projects", "skills", "testimonials", "contact"]
 
       for (const section of sections) {
         const element = document.getElementById(section)
@@ -42,7 +42,7 @@ function Header({ isScrolled }) {
       <div className="container header-container">
         <div className="logo-container">
           <a href="#home" className="logo">
-            Portfolio
+            AFO
           </a>
           {/* Uncomment and adjust when you have your profile image */}
           {/* <div className="profile-image">
@@ -71,15 +71,7 @@ function Header({ isScrolled }) {
                 Projects
               </a>
             </li>
-            <li className="nav-item">
-              <a
-                href="#experience"
-                className={`nav-link ${activeSection === "experience" ? "active" : ""}`}
-                onClick={closeMenu}
-              >
-                Experience
-              </a>
-            </li>
+
             <li className="nav-item">
               <a
                 href="#skills"

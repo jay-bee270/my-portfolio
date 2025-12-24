@@ -34,7 +34,7 @@ function App() {
         <About />
         <Stats />
         <Projects />
-        <Experience />
+        
         <Skills />
         <Testimonials />
         <Contact />

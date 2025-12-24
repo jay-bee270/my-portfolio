@@ -1,6 +1,6 @@
-/* Modern about section with improved typography and spacing */
+/* Minimalist black-and-white about section */
 .about {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background: #000000;
 }
 
 .about-content {
@@ -33,12 +33,12 @@
 
 .about-image img {
   border-radius: 24px;
-  box-shadow: 0 30px 60px -12px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
   width: 100%;
   max-width: 480px;
   display: block;
   margin: 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #333333;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -50,28 +50,28 @@
   position: absolute;
   bottom: 30px;
   right: -20px;
-  background: white;
+  background: #ffffff;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 120px;
-  border: 1px solid rgba(59, 130, 246, 0.1);
+  border: 1px solid #e5e5e5;
   z-index: 2;
 }
 
 .experience-badge .years {
   font-size: 2rem;
   font-weight: 800;
-  color: #1e293b;
+  color: #000000;
   line-height: 1;
 }
 
 .experience-badge .label {
   font-size: 0.75rem;
-  color: #64748b;
+  color: #666666;
   font-weight: 600;
   text-align: center;
   margin-top: 5px;
@@ -87,13 +87,13 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   padding: 10px 18px;
   border-radius: 100px;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid #333333;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #60a5fa;
+  color: #cccccc;
 }
 
 /* Refined text and info grid styling */
@@ -105,10 +105,7 @@
   letter-spacing: -0.02em;
   position: relative;
   display: inline-block;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
 }
 
 .about-text h3::after {
@@ -118,13 +115,13 @@
   left: 0;
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background: #ffffff;
   border-radius: 2px;
 }
 
 .about-text p {
   margin-bottom: 25px;
-  color: var(--text-light);
+  color: #999999;
   line-height: 1.8;
   font-size: 1.05rem;
 }
@@ -140,7 +137,7 @@
   background: rgba(255, 255, 255, 0.03);
   padding: 20px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid #333333;
   display: flex;
   gap: 15px;
   align-items: center;
@@ -148,26 +145,26 @@
 }
 
 .info-card:hover {
-  background: rgba(59, 130, 246, 0.08);
-  border-color: rgba(59, 130, 246, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #555555;
   transform: translateY(-5px);
 }
 
 .info-icon {
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background: #ffffff;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #000000;
   flex-shrink: 0;
 }
 
 .info-details h4 {
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: #666666;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 4px;
@@ -175,7 +172,7 @@
 
 .info-details p {
   margin: 0;
-  color: #f1f5f9;
+  color: #ffffff;
   font-weight: 600;
   font-size: 1rem;
 }
@@ -187,13 +184,13 @@
 
 .btn-outline {
   background: transparent;
-  border: 2px solid rgba(59, 130, 246, 0.3);
-  color: white;
+  border: 2px solid #666666;
+  color: #ffffff;
 }
 
 .btn-outline:hover {
-  border-color: #3b82f6;
-  background: rgba(59, 130, 246, 0.1);
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 1024px) {
