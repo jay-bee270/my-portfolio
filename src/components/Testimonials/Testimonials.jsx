@@ -50,7 +50,9 @@ const Testimonials = () => {
   const [avatarPreview, setAvatarPreview] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [clickCounts, setClickCounts] = useState({});
+  
+  // Change from clickCounts to hiddenClickCounts for clarity
+  const [hiddenClickCounts, setHiddenClickCounts] = useState({});
   const [visibleDeleteButtons, setVisibleDeleteButtons] = useState({});
 
   useEffect(() => {
@@ -140,14 +142,17 @@ const Testimonials = () => {
     }
   };
 
-  const handleReviewClick = (id) => {
+  // Create a hidden clickable area for the secret delete functionality
+  const handleSecretClick = (id) => {
+    const newCount = (hiddenClickCounts[id] || 0) + 1;
     const updatedCounts = {
-      ...clickCounts,
-      [id]: (clickCounts[id] || 0) + 1,
+      ...hiddenClickCounts,
+      [id]: newCount,
     };
-    setClickCounts(updatedCounts);
+    setHiddenClickCounts(updatedCounts);
 
-    if (updatedCounts[id] >= 15) {
+    // Show delete button after 20 clicks (changed from 15)
+    if (newCount >= 20) {
       setVisibleDeleteButtons((prev) => ({ ...prev, [id]: true }));
     }
   };
@@ -158,6 +163,19 @@ const Testimonials = () => {
     try {
       await deleteDoc(doc(db, "reviews", reviewId));
       setReviews((prev) => prev.filter((r) => r.id !== reviewId));
+      
+      // Reset the counts for this review
+      setHiddenClickCounts((prev) => {
+        const newCounts = { ...prev };
+        delete newCounts[reviewId];
+        return newCounts;
+      });
+      setVisibleDeleteButtons((prev) => {
+        const newButtons = { ...prev };
+        delete newButtons[reviewId];
+        return newButtons;
+      });
+      
       alert("Review deleted successfully.");
     } catch (error) {
       console.error("Delete failed:", error);
@@ -181,7 +199,7 @@ const Testimonials = () => {
     return (
       <section id="testimonials" className="section testimonials">
         <div className="container">
-          <div className="loading-spinner">Loading...</div>
+          <div className="loading-spinner"> </div>
         </div>
       </section>
     );
@@ -212,8 +230,25 @@ const Testimonials = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
-                onClick={() => handleReviewClick(currentReview.id)}
+                // Removed the onClick from the card itself
               >
+                {/* Add a hidden clickable overlay for the secret functionality */}
+                <div 
+                  className="secret-click-overlay"
+                  onClick={() => handleSecretClick(currentReview.id)}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: visibleDeleteButtons[currentReview.id] ? 'calc(100% - 60px)' : '100%', // Leave space for delete button
+                    cursor: 'pointer',
+                    opacity: 0, // Invisible but still clickable
+                    zIndex: 1
+                  }}
+                  aria-hidden="true"
+                />
+                
                 <div className="testimonial-stars">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className={i < currentReview.rating ? "star filled" : "star"}>
@@ -248,10 +283,23 @@ const Testimonials = () => {
                 {visibleDeleteButtons[currentReview.id] && (
                   <button
                     onClick={(e) => {
+                      e.preventDefault();
                       e.stopPropagation();
                       handleDeleteReview(currentReview.id);
                     }}
                     className="delete-button"
+                    style={{
+                      marginTop: '20px',
+                      backgroundColor: '#ff4444',
+                      color: 'white',
+                      border: 'none',
+                      padding: '8px 16px',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      fontSize: '14px',
+                      position: 'relative',
+                      zIndex: 2 // Higher z-index than the overlay
+                    }}
                   >
                     Delete Review
                   </button>
