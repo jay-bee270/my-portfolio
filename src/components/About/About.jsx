@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Award, Briefcase, GraduationCap, MapPin } from "lucide-react"
 import "./About.css"
 import about from "../../assets/down.webp"
-import resume from "../../assets/resume.pdf"
+import resume from "../../assets/AfoResume.pdf"
 
 function About() {
   const [isVisible, setIsVisible] = useState(false)
@@ -137,8 +137,9 @@ function About() {
 
             <div className="about-actions">
               <a 
-                href={resume} 
-                download
+                href={resume}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   padding: "14px 32px",
                   borderRadius: "6px",
@@ -158,6 +159,33 @@ function About() {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = "#ffffff"
+                  e.currentTarget.style.borderColor = "#ffffff"
+                }}
+              >
+                View Resume
+              </a>
+              <a 
+                href={resume} 
+                download
+                style={{
+                  padding: "14px 32px",
+                  borderRadius: "6px",
+                  fontWeight: "600",
+                  fontSize: "1rem",
+                  textDecoration: "none",
+                  display: "inline-block",
+                  border: "2px solid #ffffff",
+                  color: "#ffffff",
+                  backgroundColor: "transparent",
+                  transition: "all 0.3s ease",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.1)"
+                  e.currentTarget.style.borderColor = "#ffffff"
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "transparent"
                   e.currentTarget.style.borderColor = "#ffffff"
                 }}
               >
