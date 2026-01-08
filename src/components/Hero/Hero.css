@@ -1,12 +1,13 @@
 /* Minimalist black-and-white hero section */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
   background: #000000;
   overflow: hidden;
-  margin-top: 60px;
+  padding-top: 100px;
+  padding-bottom: 60px;
 }
 
 .hero::before {
@@ -250,7 +251,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    margin-top: 70px;
+    padding-top: 120px;
   }
 
   .hero-container {
@@ -288,8 +289,9 @@
 
 @media (max-width: 480px) {
   .hero {
-    margin-top: 60px;
-    padding: 0 20px;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .hero-title {

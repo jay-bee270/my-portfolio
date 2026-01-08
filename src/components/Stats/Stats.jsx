@@ -6,27 +6,27 @@ import "./Stats.css"
 const statsData = [
   {
     id: 1,
-    number: "7+",
+    number: "10+",
     label: "Projects Completed",
-    icon: "📁",
+    
   },
   {
     id: 2,
     number: "7+",
     label: "Happy Clients",
-    icon: "😊",
+    
   },
   {
     id: 3,
     number: "3+",
     label: "Years Experience",
-    icon: "⭐",
+    
   },
   {
     id: 4,
     number: "100%",
     label: "Client Satisfaction",
-    icon: "✓",
+    
   },
 ]
 
